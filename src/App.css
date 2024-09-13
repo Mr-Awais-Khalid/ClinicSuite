@@ -1,0 +1,145 @@
+/* App.css */
+
+@font-face {
+  font-family: "Relative-Medium";
+  src: url("./Fonts/Relative-Medium.ttf") format("truetype");
+  font-weight:normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Relative-Bold";
+  src: url("./Fonts/Relative-Bold.otf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Relative-Book";
+  src: url("./Fonts/Relative-Book.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+
+/* Apply font globally */
+body {
+  font-family: "Relative-Medium";
+  /* background-color: #F2F5F9; */
+  /* font-weight: 400; */
+}
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.floating {
+  animation: floating 3s ease-in-out infinite;
+}
+/* ======================================================== */
+
+  /* #Mega Menu Styles
+  if you use sass, convert all this additional css to tailwindcss using the 'hack' @apply for all element.style (css properties)
+[ https://tailwindcss.com/docs/functions-and-directives/#apply ]
+example:
+  .mega-menu {
+  @apply
+  hidden
+  left-0
+  absolute
+  text-left
+  w-full;
+  }
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .mega-menu {
+    opacity:0;
+    visibility:hidden;
+    z-index: -900;
+    left: 0;
+    position: absolute;
+    text-align: left;
+    width: 100%;
+    transition: all 0.15s linear 0s;
+  }
+
+
+
+  /* #hoverable Class Styles */
+  .hoverable {
+    position: static;
+  }
+
+  .hoverable > a:after {
+    content: "\25BC";
+    font-size: 10px;
+    padding-left: 6px;
+    position: relative;
+    top: -1px;
+  }
+
+  .hoverable:hover .mega-menu {
+    opacity:1;
+    visibility:visible;
+    z-index: 900;
+  }
+
+
+  /* #toggle Class Styles */
+
+  .toggleable > label:after {
+    content: "\25BC";
+    font-size: 10px;
+    padding-left: 6px;
+    position: relative;
+    top: -1px;
+  }
+
+  .toggle-input {
+    display: none;
+  }
+  .toggle-input:not(checked) ~ .mega-menu {
+    opacity:0;
+    visibility:hidden;
+    z-index: -900;
+  }
+
+  .toggle-input:checked ~ .mega-menu {
+    opacity:1;
+    visibility:visible;
+    z-index: 900;
+  }
+
+  .toggle-input:checked + label {
+    color: white;
+    background: rgb(3, 102, 114); /*@apply bg-teal-700 */
+  }
+
+  .toggle-input:checked ~ label:after {
+    content: "\25B2";
+    font-size: 10px;
+    padding-left: 6px;
+    position: relative;
+    top: -1px;
+  }
+
+/* App.css or your main stylesheet */
+.contact-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Optional: Adds a dark overlay */
+  z-index: 1000; /* Ensure it’s above other content */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}

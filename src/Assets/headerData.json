@@ -1,0 +1,37 @@
+{
+  "images": [
+    {
+      "src": "https://monday.com/blog/wp-content/uploads/2022/03/Untitled-188.png",
+      "alt": "Website example 1"
+    },
+    {
+      "src": "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/237641684/original/eb9ffbffaa80cdcdfe7570ec7dc08956371d6259/oracle-apex-application-develop-or-customize.jpg",
+      "alt": "Website example 2"
+    },
+    {
+      "src": "https://public.tableau.com/static/images/Ey/EyeClinicDashboard-ProductsConversion/ClinicalProducts/4_3_hd.png",
+      "alt": "Website example 3"
+    },
+    {
+      "src": "https://s3u.tmimgcdn.com/u74779463/01b176d2831ffdd8658fe1dbdb1e6d6c.jpg",
+      "alt": "Website example 4"
+    }
+  ],
+  "headerLine": "400k+ Designers & Devs build with Relume",
+  "heading": "Websites designed & built faster with AI",
+  "description": "Use AI as your design ally, not as a replacement. Effortlessly generate sitemaps and wireframes for marketing websites in minutes.",
+  "button": {
+    "demo": {
+      "text": "Watch Demo",
+      "action": "openModal"
+    },
+    "start": {
+      "text": "Start Now",
+      "action": "startNow"
+    }
+  },
+  "video": {
+    "src": "https://www.youtube.com/embed/k6OTnyRmDlE",
+    "title": "YouTube video player"
+  }
+}
