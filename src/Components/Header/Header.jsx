@@ -1,11 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import logo1 from "../../Assets/Pics/small2.png";
 import logo3 from "../../Assets/Pics/small1.png";
-import logo2 from "../../Assets/Pics/full1.png";
 import { gsap } from "gsap";
+import DemoForm from "../Demo/DemoForm";
 
 function Header() {
+  const closeModal = () => {
+    setShowModal(false);
+  };
+  const [showModal, setShowModal] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const currentPath = location.pathname;
@@ -77,13 +80,14 @@ function Header() {
   ];
 
   return (
+    <>
     <div>
       {/* Banner */}
       {!isScrolled && (
         <div className="absolute left-0 w-full top-0 bg-transparent z-[99] logo">
           <div
             className={`max-w-[79rem] mb-12 border-b ${
-              currentPath === "/services"
+              currentPath === "/services " || currentPath ==="/eyeClinic"
                 ? "border-slate-200"
                 : "border-slate-400"
             } py-3 px-4 mx-auto text-center`}
@@ -91,7 +95,7 @@ function Header() {
             <div className="grid justify-center md:grid-cols-2 md:justify-between md:items-center gap-2">
               <div
                 className={`text-center space-x-4 md:text-start md:order-2 md:flex md:justify-end md:items-center ${
-                  currentPath === "/services"
+                  currentPath === "/services" || currentPath ==="/eyeClinic"
                     ? "text-gray-200"
                     : "text-gray-700"
                 }`}
@@ -105,7 +109,7 @@ function Header() {
               <div className="flex items-center">
                 <a
                   className={`py-2 px-3 inline-flex justify-center items-center gap-2 rounded-lg font-medium hover:bg-white/10 focus:outline-none focus:bg-white/10 transition text-sm ${
-                    currentPath === "/services"
+                    currentPath === "/services" || currentPath ==="/eyeClinic"
                       ? "text-gray-200"
                       : "text-gray-700"
                   }`}
@@ -117,7 +121,7 @@ function Header() {
                 <span className="inline-block border-e border-white/30 w-px h-5 mx-2" />
                 <a
                   className={`py-2 px-3 inline-flex justify-center items-center gap-2 rounded-lg font-medium hover:bg-white/10 focus:outline-none focus:bg-white/10 transition text-sm ${
-                    currentPath === "/services"
+                    currentPath === "/services" || currentPath ==="/eyeClinic"
                       ? "text-gray-200"
                       : "text-gray-700"
                   }`}
@@ -224,10 +228,10 @@ function Header() {
                   <Link
                     ref={homeLinkRef}
                     className={`p-2 flex items-center text-sm ${
-                      currentPath === "/"
+                       currentPath ==="/eyeClinic"
                         ? isScrolled
                           ? "text-gray-700"
-                          : "text-gray-700"
+                          : "text-gray-200"
                         : "text-gray-700 hover:text-blue-500 focus:outline-none focus:text-blue-500"
                     }`}
                     to="/"
@@ -252,9 +256,12 @@ function Header() {
                 >
                   <Link
                     ref={aboutLinkRef}
-                    className={`p-2 flex items-center text-sm ${
+                    className={`p-4 flex items-center text-sm ${
+                      currentPath ==="/eyeClinic"
+                        ?
                       isScrolled
                         ? "text-gray-700 hover:text-blue-500 focus:outline-none focus:text-blue-500"
+                        : "text-gray-200 hover:text-blue-500 focus:outline-none focus:text-blue-500"
                         : "text-gray-700 hover:text-blue-500 focus:outline-none focus:text-blue-500"
                     }`}
                     to="/"
@@ -350,10 +357,11 @@ function Header() {
                   <Link
                     ref={servicesLinkRef}
                     className={`p-2 flex items-center text-sm ${
-                      currentPath === "/services"
-                        ? "text-gray-200"
-                        : isScrolled
+                      currentPath ==="/eyeClinic"
+                        ?
+                      isScrolled
                         ? "text-gray-700 hover:text-blue-500 focus:outline-none focus:text-blue-500"
+                        : "text-gray-200 hover:text-blue-500 focus:outline-none focus:text-blue-500"
                         : "text-gray-700 hover:text-blue-500 focus:outline-none focus:text-blue-500"
                     }`}
                     to="/pricing"
@@ -375,10 +383,11 @@ function Header() {
                   <Link
                     ref={blogLinkRef}
                     className={`p-2 flex items-center text-sm ${
-                      currentPath === "/services"
-                        ? "text-gray-200"
-                        : isScrolled
+                      currentPath ==="/eyeClinic"
+                        ?
+                      isScrolled
                         ? "text-gray-700 hover:text-blue-500 focus:outline-none focus:text-blue-500"
+                        : "text-gray-200 hover:text-blue-500 focus:outline-none focus:text-blue-500"
                         : "text-gray-700 hover:text-blue-500 focus:outline-none focus:text-blue-500"
                     }`}
                     to="/about"
@@ -400,10 +409,11 @@ function Header() {
                   <Link
                     ref={contactLinkRef}
                     className={`p-2 flex items-center text-sm ${
-                      currentPath === "/services"
-                        ? "text-gray-200"
-                        : isScrolled
+                      currentPath ==="/eyeClinic"
+                        ?
+                      isScrolled
                         ? "text-gray-700 hover:text-blue-500 focus:outline-none focus:text-blue-500"
+                        : "text-gray-200 hover:text-blue-500 focus:outline-none focus:text-blue-500"
                         : "text-gray-700 hover:text-blue-500 focus:outline-none focus:text-blue-500"
                     }`}
                     to="/contact"
@@ -419,14 +429,16 @@ function Header() {
 
                 <div className="relative flex flex-wrap items-center gap-x-1.5 md:ps-2.5 mt-1 md:mt-0 md:ms-1.5 before:block before:absolute before:top-1/2 before:-start-px before:w-px before:h-4 before:bg-black/30 before:-translate-y-1/2">
                   <a
-                    className={`p-2 flex gap-1 items-center text-sm ${
-                      currentPath === "/services"
+                    className={`p-2 flex gap-1 items-center text-sm cursor-pointer ${
+                      currentPath === "/DemoRequest"
                         ? "text-gray-200"
                         : isScrolled
                         ? "bg-gradient-to-r from-pink-600 via-pink-500 to-blue-600 bg-clip-text text-transparent animate-wave hover:text-blue-500 focus:outline-none focus:text-blue-500"
                         : "bg-gradient-to-r from-pink-600 via-pink-500 to-blue-600 bg-clip-text text-transparent animate-wave "
                     }`}
-                    href="#"
+                    onClick={()=>{
+                      setShowModal(true);
+                    }}
                     style={{
                       backgroundSize: "400% 100%", // Enlarges the background to create smooth transitions
                     }}
@@ -438,11 +450,12 @@ function Header() {
 
                 <div className="relative flex flex-wrap items-center gap-x-1.5 md:ps-2.5 mt-1 md:mt-0 md:ms-1.5 before:block before:absolute before:top-1/2 before:-start-px before:w-px before:h-4 before:bg-black/30 before:-translate-y-1/2">
                   <a
-                    className={`p-2 flex items-center text-sm ${
-                      currentPath === "/services"
-                        ? "text-gray-200"
-                        : isScrolled
+                    className={`p-2 flex items-center  text-sm ${
+                      currentPath ==="/eyeClinic"
+                        ?
+                      isScrolled
                         ? "text-gray-700 hover:text-blue-500 focus:outline-none focus:text-blue-500"
+                        : "text-gray-200 hover:text-blue-500 focus:outline-none focus:text-blue-500"
                         : "text-gray-700 hover:text-blue-500 focus:outline-none focus:text-blue-500"
                     }`}
                     href="#"
@@ -469,8 +482,41 @@ function Header() {
             </div>
           </div>
         </nav>
+       
       </header>
-    </div>
+    </div> 
+    {showModal && (
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center">
+          <div className="absolute inset-0 bg-black opacity-50 transition-opacity duration-300 ease-in-out"></div>
+          <div
+            className={`relative bg-white rounded-lg shadow-xl transition-all duration-300 ease-in-out ${
+              showModal ? "scale-100 opacity-100" : "scale-95 opacity-0"
+            }`}
+          >
+            <button
+              onClick={closeModal}
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
+            </button>
+            <DemoForm/>
+          </div>
+        </div>
+      )}
+      </>
   );
 }
 

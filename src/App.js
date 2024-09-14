@@ -35,18 +35,18 @@ function App() {
     <>
       <Header/>
       <Routes>
-
         <Route path="/" element={<ParentComponent />} />
         <Route path="/eyeClinic" element= {<DashboardOne/>} />
         <Route path="/contact" element={<Contact/>} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/about" element={<AboutUs />} /> 
+        <Route path="/DemoRequest" element={<DemoForm />} /> 
         <Route path="*" element={<ErrorPage />} />
       </Routes>
 
       {/* //Demo Modal Pop up */}
       {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center">
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center">
           <div className="absolute inset-0 bg-black opacity-50 transition-opacity duration-300 ease-in-out"></div>
           <div
             className={`relative bg-white rounded-lg shadow-xl transition-all duration-300 ease-in-out ${

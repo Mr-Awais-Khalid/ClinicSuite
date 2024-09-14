@@ -8,6 +8,7 @@ import { WandSparkles } from "lucide-react";
 import StatusCustomizer from "../Components/LandingPageComponents/TabPanel";
 import Cards from "../Components/LandingPageComponents/Cards";
 import { useNavigate, Link } from "react-router-dom";
+import TabsSection from "../Components/TabsSection";
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -80,13 +81,13 @@ const LandingPage = () => {
             <div className="absolute left-0">
               <div className="space-y-4">
                 {data.images.slice(0, 2).map((image, index) => (
-                  <Link to={"/eyeClinic"}>
-                    <div
-                      key={`left-${index}`}
-                      className={`relative xlg:w-96 xlg:h-56 w-80 h-52 bg-white rounded-lg shadow-md overflow-hidden transition duration-300 ease-in-out cursor-pointer hover:shadow-2xl hover:scale-110 hover:z-10 floating ${
-                        index === 1 ? "-md:ml-0" : "md:ml-0"
-                      }`}
-                    >
+                  <div
+                    key={`left-${index}`}
+                    className={`relative xl:w-72 xl:h-48 2xl:w-96 2xl:h-56 w-80 h-52 bg-white rounded-lg shadow-md overflow-hidden transition duration-300 ease-in-out cursor-pointer hover:shadow-2xl hover:scale-110 hover:z-10 floating ${
+                      index === 1 ? "-md:ml-0" : "md:ml-0"
+                    }`}
+                  >
+                    <Link to={"/eyeClinic"}>
                       <img
                         src={image.src}
                         alt={image.alt}
@@ -97,8 +98,8 @@ const LandingPage = () => {
                       <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 hover:opacity-100">
                         <i className="fas fa-eye text-white text-3xl"></i>
                       </div>
-                    </div>
-                  </Link>
+                    </Link>
+                  </div>
                 ))}
               </div>
             </div>
@@ -109,7 +110,7 @@ const LandingPage = () => {
                 {data.images.slice(2).map((image, index) => (
                   <div
                     key={`right-${index}`}
-                    className={`relative xlg:w-96 xlg:h-56 w-80 h-52 bg-white rounded-lg shadow-md overflow-hidden transition duration-300 ease-in-out ${
+                    className={`relative xl:w-72 xl:h-48 2xl:w-96 2xl:h-56 w-80 h-52 bg-white rounded-lg shadow-md overflow-hidden transition duration-300 ease-in-out ${
                       index === 1 ? "lg:ml-0" : "-lg:ml-0"
                     } cursor-pointer hover:shadow-2xl hover:scale-110 hover:z-10 floating`}
                     // onClick={navigate('home/eyeClinic')}
@@ -223,6 +224,10 @@ const LandingPage = () => {
             </div>
           </div>
         )}
+      </section>
+
+      <section className="mt-10 mb-32">
+        <TabsSection />
       </section>
       {/* =============================== Features ========================================*/}
       {/* <section className=" overflow-hidden">

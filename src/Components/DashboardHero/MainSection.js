@@ -106,7 +106,7 @@ function MainSection() {
         />
          
          {/* Mute/Unmute Button */}
-        <div className="absolute top-4 right-4 z-20">
+        <div className="absolute bottom-4 right-4 z-20">
         <button
           onClick={toggleMute}
           className="p-2 bg-gray-800 text-white rounded-full focus:outline-none">
