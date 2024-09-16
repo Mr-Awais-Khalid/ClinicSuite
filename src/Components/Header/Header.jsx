@@ -483,7 +483,13 @@ function Header() {
                     <SignedIn>
                       <Link
                         to="/home"
-                        className="flex items-center gap-x-2 mr-4 font-medium text-gray-500 hover:text-blue-600 "
+                        className={`flex items-center gap-x-2 mr-4 font-medium ${
+                          currentPath === "/eyeClinic"
+                            ? isScrolled
+                              ? "text-gray-700 hover:text-blue-500 focus:outline-none focus:text-blue-500"
+                              : "text-gray-200 hover:text-blue-500 focus:outline-none focus:text-blue-500"
+                            : "text-gray-700 hover:text-blue-500 focus:outline-none focus:text-blue-500"
+                        } `}
                       >
                         <i className="fa-duotone fa-house"></i>
                         Dashboard
