@@ -1,24 +1,24 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
-import HeroSection from "./Pages/LandingPage";
 import DashboardOne from "./Components/Dashboards/DashboardOne";
 import ParentComponent from "./Components/Dashboards/ParentComponent";
 import Header from "./Components/Header/Header";
-import Login from "./Components/Login/Login";
 import DemoForm from "./Components/Demo/DemoForm";
 import Footer from "./Components/Footer/Footer";
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation, useLoaderData } from 'react-router-dom';
 import AboutUs from "./Pages/AboutUs";
 import ErrorPage from "./ErrorPage";
 import Pricing from "./Pages/Pricing";
 import Contact from "./Pages/ContactUs";
+import UserLogin from "./Components/Auth/UserLogin"
+import UserSignUp from "./Components/Auth/UserSignUp";
 
 function App() {
   
 // =====================================
   const [showModal, setShowModal] = useState(false);
-
+  const location = useLocation();
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowModal(true);
@@ -33,7 +33,9 @@ function App() {
 
   return (
     <>
-      <Header/>
+
+      {location.pathname !== "/login" && location.pathname !== "/register" && (<Header/>)}
+
       <Routes>
         <Route path="/" element={<ParentComponent />} />
         <Route path="/eyeClinic" element= {<DashboardOne/>} />
@@ -42,10 +44,15 @@ function App() {
         <Route path="/about" element={<AboutUs />} /> 
         <Route path="/DemoRequest" element={<DemoForm />} /> 
         <Route path="*" element={<ErrorPage />} />
+
+        {/* USER Login Routes */}
+        <Route path="/login" element={<UserLogin />} />
+        <Route path="/register" element={<UserSignUp />} />   
       </Routes>
 
+
       {/* //Demo Modal Pop up */}
-      {showModal && (
+      {showModal && location.pathname !== "/login" && location.pathname !== "/register" && (
         <div className="fixed inset-0 z-[9999] flex items-center justify-center">
           <div className="absolute inset-0 bg-black opacity-50 transition-opacity duration-300 ease-in-out"></div>
           <div
@@ -76,7 +83,10 @@ function App() {
           </div>
         </div>
       )}
-      <Footer/>
+
+
+
+   {location.pathname !== "/login" && location.pathname !== "/register" && (<Footer/>)}
     </>
   );
 }

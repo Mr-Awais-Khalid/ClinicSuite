@@ -1,14 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
+import { ClerkProvider } from "@clerk/clerk-react";
+// Import your publishable key
+const PUBLISHABLE_KEY = 'pk_test_YW1hemluZy1tYXJ0aW4tOS5jbGVyay5hY2NvdW50cy5kZXYk';
+
+if (!PUBLISHABLE_KEY) {
+  throw new Error("Missing Publishable Key");
+}
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
   <BrowserRouter>
-    <App />
+    <React.StrictMode>
+      <ClerkProvider publishableKey={PUBLISHABLE_KEY} >
+        <App />
+      </ClerkProvider>
+    </React.StrictMode>
   </BrowserRouter>,
   document.getElementById("root")
 );
