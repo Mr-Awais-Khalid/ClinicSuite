@@ -37,7 +37,7 @@ const TaskCard = ({ title, description, gradient, isLarge, imageSrc }) => {
 
 const Cards = () => {
   return (
-    <section className="max-w-[90rem] mt-20 mx-auto py-0 px-4 sm:px-6 lg:px-8">
+    <section className="max-w-[80rem] mt-20 mx-auto py-0  sm:px-6 ">
       <div className="text-center mb-12">
         {/* <span className="inline-block bg-slate-200 px-4 py-2 rounded-full text-sm font-semibold text-gray-700">
           Clinic Suites 

@@ -55,7 +55,7 @@ function Header() {
         "https://s.tmimgcdn.com/scr/800x500/413700/apex-bootstrap-5-admin-dashboard_413709-original.png",
       title: "Dental Clinic",
       description: "A little text here",
-      link: "#",
+      link: "/dentalClinic",
     },
     {
       imageUrl:
@@ -88,7 +88,7 @@ function Header() {
           <div className="absolute left-0 w-full top-0 bg-transparent z-[99] logo">
             <div
               className={`max-w-[79rem] mb-12 border-b ${
-                currentPath === "/services " || currentPath === "/eyeClinic"
+                currentPath === "/services " || currentPath === "/eyeClinic" || currentPath === "/dentalClinic"
                   ? "border-slate-200"
                   : "border-slate-400"
               } py-3 px-4 mx-auto text-center`}
@@ -96,7 +96,7 @@ function Header() {
               <div className="grid justify-center md:grid-cols-2 md:justify-between md:items-center gap-2">
                 <div
                   className={`text-center space-x-4 md:text-start md:order-2 md:flex md:justify-end md:items-center ${
-                    currentPath === "/services" || currentPath === "/eyeClinic"
+                    currentPath === "/services" || currentPath === "/eyeClinic" || currentPath === "/dentalClinic"
                       ? "text-gray-200"
                       : "text-gray-700"
                   }`}
@@ -111,7 +111,7 @@ function Header() {
                   <a
                     className={`py-2 px-3 inline-flex justify-center items-center gap-2 rounded-lg font-medium hover:bg-white/10 focus:outline-none focus:bg-white/10 transition text-sm ${
                       currentPath === "/services" ||
-                      currentPath === "/eyeClinic"
+                      currentPath === "/eyeClinic" || currentPath === "/dentalClinic"
                         ? "text-gray-200"
                         : "text-gray-700"
                     }`}
@@ -124,7 +124,7 @@ function Header() {
                   <a
                     className={`py-2 px-3 inline-flex justify-center items-center gap-2 rounded-lg font-medium hover:bg-white/10 focus:outline-none focus:bg-white/10 transition text-sm ${
                       currentPath === "/services" ||
-                      currentPath === "/eyeClinic"
+                      currentPath === "/eyeClinic" || currentPath === "/dentalClinic"
                         ? "text-gray-200"
                         : "text-gray-700"
                     }`}
@@ -231,7 +231,7 @@ function Header() {
                     <Link
                       ref={homeLinkRef}
                       className={`p-2 flex items-center text-sm ${
-                        currentPath === "/eyeClinic"
+                        currentPath === "/eyeClinic" || currentPath === "/dentalClinic"
                           ? isScrolled
                             ? "text-gray-700"
                             : "text-gray-200"
@@ -260,7 +260,7 @@ function Header() {
                     <Link
                       ref={aboutLinkRef}
                       className={`p-4 flex items-center text-sm ${
-                        currentPath === "/eyeClinic"
+                        currentPath === "/eyeClinic" || currentPath === "/dentalClinic"
                           ? isScrolled
                             ? "text-gray-700 hover:text-blue-500 focus:outline-none focus:text-blue-500"
                             : "text-gray-200 hover:text-blue-500 focus:outline-none focus:text-blue-500"
@@ -359,7 +359,7 @@ function Header() {
                     <Link
                       ref={servicesLinkRef}
                       className={`p-2 flex items-center text-sm ${
-                        currentPath === "/eyeClinic"
+                        currentPath === "/eyeClinic" || currentPath === "/dentalClinic"
                           ? isScrolled
                             ? "text-gray-700 hover:text-blue-500 focus:outline-none focus:text-blue-500"
                             : "text-gray-200 hover:text-blue-500 focus:outline-none focus:text-blue-500"
@@ -384,7 +384,7 @@ function Header() {
                     <Link
                       ref={blogLinkRef}
                       className={`p-2 flex items-center text-sm ${
-                        currentPath === "/eyeClinic"
+                        currentPath === "/eyeClinic" || currentPath === "/dentalClinic"
                           ? isScrolled
                             ? "text-gray-700 hover:text-blue-500 focus:outline-none focus:text-blue-500"
                             : "text-gray-200 hover:text-blue-500 focus:outline-none focus:text-blue-500"
@@ -409,7 +409,7 @@ function Header() {
                     <Link
                       ref={contactLinkRef}
                       className={`p-2 flex items-center text-sm ${
-                        currentPath === "/eyeClinic"
+                        currentPath === "/eyeClinic" || currentPath === "/dentalClinic"
                           ? isScrolled
                             ? "text-gray-700 hover:text-blue-500 focus:outline-none focus:text-blue-500"
                             : "text-gray-200 hover:text-blue-500 focus:outline-none focus:text-blue-500"
@@ -452,7 +452,7 @@ function Header() {
                     <SignedOut>
                       <Link
                         className={`p-2 flex items-center  text-sm ${
-                          currentPath === "/eyeClinic"
+                          currentPath === "/eyeClinic" || currentPath === "/dentalClinic"
                             ? isScrolled
                               ? "text-gray-700 hover:text-blue-500 focus:outline-none focus:text-blue-500"
                               : "text-gray-200 hover:text-blue-500 focus:outline-none focus:text-blue-500"
@@ -484,7 +484,7 @@ function Header() {
                       <Link
                         to="/home"
                         className={`flex items-center gap-x-2 mr-4 font-medium ${
-                          currentPath === "/eyeClinic"
+                          currentPath === "/eyeClinic" || currentPath === "/dentalClinic"
                             ? isScrolled
                               ? "text-gray-700 hover:text-blue-500 focus:outline-none focus:text-blue-500"
                               : "text-gray-200 hover:text-blue-500 focus:outline-none focus:text-blue-500"
@@ -531,7 +531,7 @@ function Header() {
                 ></path>
               </svg>
             </button>
-            <DemoForm />
+            <DemoForm/>
           </div>
         </div>
       )}

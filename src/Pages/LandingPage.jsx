@@ -73,7 +73,7 @@ const LandingPage = () => {
         <div class="bg-gradient-to-tl from-blue-50 via-blue-100 to-blue-50 blur-3xl w-8xl h-[50rem] rounded-fulls origin-top-left -rotate-12 -translate-x-[15rem] dark:from-indigo-900/70 dark:via-indigo-900/70 dark:to-blue-900/70"></div>
       </div>
       {/* =======================================================================Hero Section */}
-      <section className="bg-gradient-to-r from-blue-100 to-pink-100 z-0 mx-w-[90rem] mx-auto  transition-all ease-in-out duration-500 min-h-screen xl:min-h-[650px] px-4 md:px-8 py-8 lg:pt-36 overflow-hidden">
+      <section className="bg-gradient-to-r from-blue-100 to-pink-100 z-0 mx-w-[90rem] mx-auto  transition-all ease-in-out duration-500 min-h-screen xl:min-h-[650px] px-4 md:px-8 py-8 lg:pt-36 overflow-hidden align-middle">
         <div className="max-w-screen-2xl mx-auto relative ">
           {/* Images for large screens */}
           <div className="hidden lg:block">
@@ -87,7 +87,7 @@ const LandingPage = () => {
                       index === 1 ? "-md:ml-0" : "md:ml-0"
                     }`}
                   >
-                    <Link to={"/eyeClinic"}>
+                    <Link to={image.link}>
                       <img
                         src={image.src}
                         alt={image.alt}
@@ -115,15 +115,17 @@ const LandingPage = () => {
                     } cursor-pointer hover:shadow-2xl hover:scale-110 hover:z-10 floating`}
                     // onClick={navigate('home/eyeClinic')}
                   >
-                    <img
-                      src={image.src}
-                      alt={image.alt}
-                      className="w-full h-full object-cover"
-                    />
-                    {/* Overlay with Eye Icon */}
-                    <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 hover:opacity-100">
-                      <i className="fas fa-eye text-white text-3xl"></i>
-                    </div>
+                    <Link to={image.link}>
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        className="w-full h-full object-cover"
+                      />
+                      {/* Overlay with Eye Icon */}
+                      <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 hover:opacity-100">
+                        <i className="fas fa-eye text-white text-3xl"></i>
+                      </div>
+                    </Link>
                   </div>
                 ))}
               </div>
@@ -229,178 +231,140 @@ const LandingPage = () => {
       <section className="mt-10 mb-32">
         <TabsSection />
       </section>
-      {/* =============================== Features ========================================*/}
-      {/* <section className=" overflow-hidden">
-        <div className="container px-4 mx-auto">
-          <div className="flex flex-wrap xl:items-center -m-8">
-            <div className="w-full md:w-1/2 p-8">
-              <img
-                className="mx-auto transform hover:translate-y-3 transition ease-in-out duration-1000"
-                src="https://static.shuffle.dev/components/preview/238eb578-e531-4cf4-a658-a1ff13c9b896/assets/public/flaro-assets/images/features/upgrade.png"
-                alt=""
-              />
-            </div>
-            <div className="w-full mt-10 md:w-1/2 p-8">
-              <div className="md:max-w-xl">
-                <p className="mb-7 text-sm text-gray-600 font-semibold uppercase tracking-px">
-                  👋 Meet new Clinic Suite
-                </p>
-                <h2 className="mb-16 text-6xl md:text-7xl font-bold font-heading tracking-px-n leading-tight">
-                  Clinic Suite have all what You think about
-                </h2>
-                <div className="flex flex-wrap mb-5 -m-8">
-                  <div className="w-full md:w-1/2 ">
-                    <div className="md:max-w-xs ">
-                      <div className="flex flex-wrap  -m-2">
-                        <div className="w-auto p-2">
-                          <svg
-                            className="mt-1"
-                            width={24}
-                            height={24}
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M9 3V5M15 3V5M9 19V21M15 19V21M5 9H3M5 15H3M21 9H19M21 15H19M7 19H17C18.1046 19 19 18.1046 19 17V7C19 5.89543 18.1046 5 17 5H7C5.89543 5 5 5.89543 5 7V17C5 18.1046 5.89543 19 7 19ZM9 9H15V15H9V9Z"
-                              stroke="#4F46E5"
-                              strokeWidth={2}
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </div>
-                        <div className="flex-1 p-2 ">
-                          <h3 className="mb-2 text-xl font-semibold leading-normal">
-                            Analytical
-                          </h3>
-                          <p className="text-gray-600 font-medium leading-relaxed">
-                            Lorem ipsum dolor sit amet, to the consectr adipis.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="w-full md:w-1/2 ">
-                    <div className="md:max-w-xs">
-                      <div className="flex flex-wrap -m-2">
-                        <div className="w-auto p-2">
-                          <svg
-                            className="mt-1"
-                            width={24}
-                            height={24}
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M16 8V16M12 11V16M8 14V16M6 20H18C19.1046 20 20 19.1046 20 18V6C20 4.89543 19.1046 4 18 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20Z"
-                              stroke="#4F46E5"
-                              strokeWidth={2}
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </div>
-                        <div className="flex-1 p-2">
-                          <h3 className="mb-2 text-xl font-semibold leading-normal">
-                            Dashboards
-                          </h3>
-                          <p className="text-gray-600 font-medium leading-relaxed">
-                            Lorem ipsum dolor sit amet, to the consectr adipis.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex flex-wrap mt-5 mb-5 -m-8">
-                  <div className="w-full md:w-1/2 ">
-                    <div className="md:max-w-xs ">
-                      <div className="flex flex-wrap  -m-2">
-                        <div className="w-auto p-2">
-                          <svg
-                            className="mt-1"
-                            width={24}
-                            height={24}
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M9 3V5M15 3V5M9 19V21M15 19V21M5 9H3M5 15H3M21 9H19M21 15H19M7 19H17C18.1046 19 19 18.1046 19 17V7C19 5.89543 18.1046 5 17 5H7C5.89543 5 5 5.89543 5 7V17C5 18.1046 5.89543 19 7 19ZM9 9H15V15H9V9Z"
-                              stroke="#4F46E5"
-                              strokeWidth={2}
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </div>
-                        <div className="flex-1 p-2 ">
-                          <h3 className="mb-2 text-xl font-semibold leading-normal">
-                            Analytical
-                          </h3>
-                          <p className="text-gray-600 font-medium leading-relaxed">
-                            Lorem ipsum dolor sit amet, to the consectr adipis.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="w-full md:w-1/2 ">
-                    <div className="md:max-w-xs">
-                      <div className="flex flex-wrap -m-2">
-                        <div className="w-auto p-2">
-                          <svg
-                            className="mt-1"
-                            width={24}
-                            height={24}
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M16 8V16M12 11V16M8 14V16M6 20H18C19.1046 20 20 19.1046 20 18V6C20 4.89543 19.1046 4 18 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20Z"
-                              stroke="#4F46E5"
-                              strokeWidth={2}
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </div>
-                        <div className="flex-1 p-2">
-                          <h3 className="mb-2 text-xl font-semibold leading-normal">
-                            Dashboards
-                          </h3>
-                          <p className="text-gray-600 font-medium leading-relaxed">
-                            Lorem ipsum dolor sit amet, to the consectr adipis.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="md:inline-block">
-                  <button
-                    className="py-4 px-6 w-full text-white font-semibold border border-indigo-700 rounded-xl shadow-4xl focus:ring focus:ring-indigo-300 bg-indigo-600 hover:bg-indigo-700 transition ease-in-out duration-200"
-                    type="button"
-                  >
-                    Get Started Now
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
+     
 
       {/* ========================================================================Cards */}
       <Cards />
+      <section className="  -mt-14">
+        <svg
+          className="mx-auto"
+          fill="none"
+          height="233"
+          viewBox="0 0 1157 233"
+          width="1157"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
+        >
+          <linearGradient
+            id="a"
+            gradientUnits="userSpaceOnUse"
+            x1="578.054"
+            x2="578.054"
+            y1=".5"
+            y2="232.106"
+          >
+            <stop offset=".259836" stop-color="#d9d9d9" stop-opacity="0" />
+            <stop offset=".45799" stop-color="#d9d9d9" />
+          </linearGradient>
+          <linearGradient id="b">
+            <stop offset="0" stop-color="#8809fe" />
+            <stop offset="1" stop-color="#ceceea" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient
+            id="c"
+            gradientUnits="userSpaceOnUse"
+            x1="553.776"
+            x2="552.404"
+            xlinkHref="#b"
+            y1="-35.5426"
+            y2="216.308"
+          />
+          <linearGradient id="d">
+            <stop offset="0" stop-color="#89c0fb" />
+            <stop offset="1" stop-color="#ceceea" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient
+            id="e"
+            gradientUnits="userSpaceOnUse"
+            x1="223.491"
+            x2="223.491"
+            xlinkHref="#d"
+            y1="-27.3994"
+            y2="284.972"
+          />
+          <linearGradient id="f">
+            <stop offset="0" stop-color="#f8a4ff" />
+            <stop offset="1" stop-color="#ceceea" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient
+            id="g"
+            gradientUnits="userSpaceOnUse"
+            x1="-41.5086"
+            x2="-41.5086"
+            xlinkHref="#f"
+            y1="-18.8994"
+            y2="293.472"
+          />
+          <linearGradient
+            id="h"
+            gradientUnits="userSpaceOnUse"
+            x1="601.345"
+            x2="602.717"
+            xlinkHref="#b"
+            y1="-35.5426"
+            y2="216.308"
+          />
+          <linearGradient
+            id="i"
+            gradientUnits="userSpaceOnUse"
+            x1="931.63"
+            x2="931.63"
+            xlinkHref="#d"
+            y1="-27.3994"
+            y2="284.972"
+          />
+          <linearGradient
+            id="j"
+            gradientUnits="userSpaceOnUse"
+            x1="1196.63"
+            x2="1196.63"
+            xlinkHref="#f"
+            y1="-18.8994"
+            y2="293.472"
+          />
+          <mask
+            id="k"
+            height="233"
+            maskUnits="userSpaceOnUse"
+            width="1157"
+            x="0"
+            y="0"
+          >
+            <path d="m0 .5h1156.11v231.606h-1156.11z" fill="url(#a)" />
+          </mask>
+          <g mask="url(#k)" opacity=".4" stroke-width="2">
+            <path
+              d="m507 12.6006s26.284 44.3695 35.5 80c11.541 44.6184 10.5 125.0004 10.5 125.0004"
+              stroke="url(#c)"
+            />
+            <path
+              d="m535 231.601-16.112-27.873c-46.347-80.174-114.049-145.9018-195.559-189.8561l-21.829-11.77131"
+              stroke="url(#e)"
+            />
+            <path
+              d="m489.5 221.601-20.707-17.677c-66.771-57-148.588-93.496-235.609-105.0989-60.506-8.0674-118.773-28.2101-171.3436-59.2321l-61.8404-36.49241"
+              stroke="url(#g)"
+            />
+            <path
+              d="m648.121 12.6006s-26.284 44.3695-35.5 80c-11.541 44.6184-10.5 125.0004-10.5 125.0004"
+              stroke="url(#h)"
+            />
+            <path
+              d="m620.121 231.601 16.112-27.873c46.347-80.174 114.049-145.9018 195.559-189.8561l21.829-11.77131"
+              stroke="url(#i)"
+            />
+            <path
+              d="m665.621 221.601 20.707-17.677c66.771-57 148.588-93.496 235.609-105.0989 60.506-8.0674 118.773-28.2101 171.343-59.2321l61.84-36.49241"
+              stroke="url(#j)"
+            />
+          </g>
+        </svg>
+      </section>
       {/* ========================================================================Progress Tabs */}
       <StatusCustomizer />
       {/* ========================================================================For Everyone */}
       <section className="relative px-16 pt-16 pb-32 overflow-hidden">
-        <div className="max-w-[90rem] mx-auto px-4 mb-12">
+        <div className="max-w-[80rem] mx-auto  mb-12">
           <h2 className="mb-6 mx-16  font-heading font-bold text-center text-6xl sm:text-7xl text-gray-900">
             A simple &amp; smart way to Manage Your Clinic
           </h2>
@@ -470,55 +434,106 @@ const LandingPage = () => {
       {/* =========================================================================NewsLeter */}
 
       {/* =========================================================================Join Today */}
-      <div className="flex justify-between -mt-20 mb-10 items-stretch max-w-[80rem] mx-auto h-96 bg-gray-100 rounded-xl shadow-lg overflow-hidden">
-        {/* Left Side */}
-        <div className="w-1/2 bg-pink-500 text-white p-6 flex flex-col justify-between">
-          <div>
-            <h2 className="text-2xl font-bold mb-2">
-              Stay ahead of what's next
-            </h2>
-            <p className="text-sm mb-4">
-              Organize your work, reminders, and calendar events all from your
-              personalized Home.
-            </p>
-          </div>
-          {/* Placeholder for dashboard image */}
-          <img
-            src="https://clickup.com/assets/home-test/stay-ahead.png"
-            alt="Task Dashboard"
-            className="rounded-lg ml-10 translate-x-11 mt-0 shadow-md"
-          />
+      <section className="relative bg-gradient-to-r from-blue-600 to-pink-600 text-white overflow-hidden">
+      <div className="max-w-6xl mx-auto py-16 md:py-20 lg:py-28 relative">
+        {/* Left Background SVG */}
+        <div className="absolute bottom-0 h-full left-0 transform -translate-x-1/2 opacity-20">
+          <svg
+            width="500"
+            height="500"
+            viewBox="0 0 500 500"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0.5 498.311V304.054C0.5 136.406 136.406 0.5 304.054 0.5H498.311C498.967 0.5 499.5 1.03289 499.5 1.68919V136.561C499.5 137.217 498.967 137.75 498.311 137.75H342.061C290.59 137.75 239.516 163.123 201.319 201.319C163.123 239.516 137.75 290.59 137.75 342.061V498.311C137.75 498.967 137.217 499.5 136.561 499.5H1.68919C1.03249 499.5 0.5 498.967 0.5 498.311Z"
+              fill="url(#paint0_linear_191_13427)"
+              stroke="#ffffff"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear_191_13427"
+                x1="0"
+                y1="500"
+                x2="500"
+                y2="0"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stopColor="white" />
+              </linearGradient>
+            </defs>
+          </svg>
         </div>
-        {/* Right Side */}
-        <div className="w-1/2 bg-blue-900 text-white p-6 relative overflow-hidden">
-          <div className="relative z-10">
-            <h2 className="text-6xl font-bold mb-5">
-              Trusted by over 2,000,000 teams
-            </h2>
-            <div className="grid grid-cols-2 gap-4 mb-6">
-              {[
-                { value: "305M+", label: "Tasks completed" },
-                { value: "55Ma+", label: "Docs created" },
-                { value: "615M+", label: "Messages sent" },
-                { value: "11M+", label: "Automations created" },
-              ].map((item, index) => (
-                <div key={index} className="flex flex-col">
-                  <span className="text-4xl font-bold">{item.value}</span>
-                  <span className="text-lg">{item.label}</span>
-                </div>
-              ))}
-            </div>
-            <button className="px-4 py-2 bg-blue-500 rounded-full text-sm font-semibold hover:bg-blue-600 transition-colors">
-              Join today for free →
-            </button>
+
+        {/* Right Background SVG */}
+        <div className="absolute top-0 h-full right-0 transform translate-x-1/2 opacity-20">
+          <svg
+            width="500"
+            height="500"
+            viewBox="0 0 500 500"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M499.5 1.68919V195.946C499.5 363.594 363.594 499.5 195.946 499.5H1.68919C1.03289 499.5 0.5 498.967 0.5 498.311V363.439C0.5 362.783 1.03289 362.25 1.68919 362.25H157.939C209.41 362.25 260.484 336.877 298.681 298.681C336.877 260.484 362.25 209.41 362.25 157.939V1.68919C362.25 1.03289 362.783 0.5 363.439 0.5H498.311C498.967 0.5 499.5 1.03289 499.5 1.68919Z"
+              fill="url(#paint0_linear_191_13426)"
+              stroke="#ffffff"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear_191_13426"
+                x1="499.998"
+                y1="2.85805e-05"
+                x2="8.49831"
+                y2="500"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stopColor="white" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 text-center">
+          <div className="max-w-2xl mx-auto">
+            <h3 className="font-bold text-3xl sm:text-4xl lg:text-5xl mb-6 leading-tight">
+              Join 14K People and Embrace Fun Learning
+            </h3>
+            <p className="text-lg sm:text-xl text-white/80 mb-8">
+              Fuel your curiosity by joining a vibrant community of learners.
+            </p>
+            <form action="" className="flex flex-col sm:flex-row justify-center gap-4">
+              <input
+                className="flex-grow py-4 px-6 rounded-lg border-none shadow-lg text-gray-800"
+                type="email"
+                placeholder="Enter your email address"
+              />
+              <button className="bg-primary hover:animate-wave hover:bg-gradient-to-r from-pink-600 via-pink-500 to-blue-600 bg-clip-text text-transparent  duration-500 transition py-4 px-8 rounded-lg shadow-lg text-white flex items-center justify-center">
+                Subscribe
+                <svg
+                  className="ml-2"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4.99996 10H15.4166M15.4166 10L10.4166 5M15.4166 10L10.4166 15"
+                    stroke="white"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+            </form>
+            <p className="mt-6 text-white/60">Unsubscribe anytime.</p>
           </div>
-          {/* Globe graphic */}
-          <Globe
-            className="absolute right-[-10%] bottom-[-10%] text-indigo-700 opacity-20"
-            size={200}
-          />
         </div>
       </div>
+    </section>
     </>
   );
 };

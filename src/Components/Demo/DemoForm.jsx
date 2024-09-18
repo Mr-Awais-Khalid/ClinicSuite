@@ -3,12 +3,12 @@ import { Facebook, Twitter, Linkedin, Phone } from "lucide-react"; // Import the
 
 const DemoForm = () => {
   return (
-    <div className="bg-slate-50 rounded h-3/4  "> 
-      <section className="overflow-auto  z-[9999] ">
+    <div className="bg-slate-50 rounded   "> 
+      <section className="overflow-auto  z-[9999] h-3/4 ">
         <div className="container px-4 mx-auto">
           <div className="flex flex-wrap ">
             <div className="w-full lg:w-1/2 p-2">
-              <div className="flex flex-col justify-between -mt-5 h-full max-w-xl mx-auto">
+              <div className="flex flex-col justify-between -mt-5 h-3/4 max-w-xl mx-auto">
                 <div>
                   <div className="px-2 py-3 rounded-md border mt-10  border-blue-100 bg-blue-50 inline-flex items-center gap-2 mb-4">
                     <svg
@@ -81,7 +81,7 @@ const DemoForm = () => {
                 </div>
               </div>
             </div>
-            <div className="w-full lg:w-1/2 p-4">
+            <div className="w-full h-3/4 lg:w-1/2 p-4">
               <form action="">
                 <div className="border border-gray-100 rounded-3xl p-6 max-w-xl mx-auto">
                   <div className="flex flex-wrap -mx-4">

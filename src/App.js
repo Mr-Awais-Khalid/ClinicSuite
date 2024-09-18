@@ -13,6 +13,8 @@ import Pricing from "./Pages/Pricing";
 import Contact from "./Pages/ContactUs";
 import UserLogin from "./Components/Auth/UserLogin"
 import UserSignUp from "./Components/Auth/UserSignUp";
+import DentalDashboard from "./Components/Dashboards/DentalDashboard";
+import WhatsAppButton from "./Components/Whatsapp/WhatsAppButton";
 
 function App() {
   
@@ -39,6 +41,7 @@ function App() {
       <Routes>
         <Route path="/" element={<ParentComponent />} />
         <Route path="/eyeClinic" element= {<DashboardOne/>} />
+        <Route path="/dentalClinic" element= {<DentalDashboard/>} />
         <Route path="/contact" element={<Contact/>} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/about" element={<AboutUs />} /> 
@@ -87,6 +90,8 @@ function App() {
 
 
    {location.pathname !== "/login" && location.pathname !== "/register" && (<Footer/>)}
+   
+   <section className="absolute right-4 bottom-4"><WhatsAppButton/></section>
     </>
   );
 }

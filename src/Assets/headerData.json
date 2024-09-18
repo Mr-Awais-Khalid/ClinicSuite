@@ -2,19 +2,23 @@
   "images": [
     {
       "src": "https://monday.com/blog/wp-content/uploads/2022/03/Untitled-188.png",
-      "alt": "Website example 1"
+      "alt": "Website example 1",
+      "link": "/eyeClinic"
     },
     {
       "src": "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/237641684/original/eb9ffbffaa80cdcdfe7570ec7dc08956371d6259/oracle-apex-application-develop-or-customize.jpg",
-      "alt": "Website example 2"
+      "alt": "Website example 2",
+      "link": "/dentalClinic"
     },
     {
       "src": "https://public.tableau.com/static/images/Ey/EyeClinicDashboard-ProductsConversion/ClinicalProducts/4_3_hd.png",
-      "alt": "Website example 3"
+      "alt": "Website example 3",
+      "link": "/genralClinic"
     },
     {
       "src": "https://s3u.tmimgcdn.com/u74779463/01b176d2831ffdd8658fe1dbdb1e6d6c.jpg",
-      "alt": "Website example 4"
+      "alt": "Website example 4",
+      "link": "/Lab"
     }
   ],
   "headerLine": "400k+ Designers & Devs build with Relume",
