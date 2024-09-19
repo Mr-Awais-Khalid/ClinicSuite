@@ -6,17 +6,19 @@ const ComFeature = () => {
   const animating = useRef(false);
 
   const animateCarousel = (direction = 1) => {
-    // Ensure the ref is not null
     if (!carouselRef.current || animating.current) return;
-    animating.current = true;
-
     const items = carouselRef.current.children;
+
+    // Ensure there are enough items before trying to animate
+    if (!items || items.length === 0) return;
+
+    animating.current = true;
 
     gsap.to(carouselRef.current, {
       x: `${-direction * 33.3333}%`, // Move by the width of one item
       duration: 1,
       ease: "power1.inOut",
-      onComplete: function () {
+      onComplete: () => {
         if (direction === 1) {
           carouselRef.current.appendChild(items[0]); // Move the first item to the end
         } else {
@@ -29,9 +31,9 @@ const ComFeature = () => {
   };
 
   useEffect(() => {
-    // Check that the carouselRef is attached to a DOM element before using it
     if (!carouselRef.current) return;
 
+    // Start the automatic animation after a slight delay
     const interval = setInterval(() => animateCarousel(1), 4000);
 
     return () => clearInterval(interval);

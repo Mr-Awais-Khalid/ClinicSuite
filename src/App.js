@@ -15,6 +15,7 @@ import UserLogin from "./Components/Auth/UserLogin"
 import UserSignUp from "./Components/Auth/UserSignUp";
 import DentalDashboard from "./Components/Dashboards/DentalDashboard";
 import WhatsAppButton from "./Components/Whatsapp/WhatsAppButton";
+import Subscription from "./Pages/Subscription";
 
 function App() {
   
@@ -46,6 +47,7 @@ function App() {
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/about" element={<AboutUs />} /> 
         <Route path="/DemoRequest" element={<DemoForm />} /> 
+        <Route path="/subscription" element={<Subscription/>} />
         <Route path="*" element={<ErrorPage />} />
 
         {/* USER Login Routes */}

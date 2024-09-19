@@ -58,13 +58,15 @@ const TabPanel = () => {
 
   return (
     <>
-      <h1 className="font-semibold text-4xl max-w-80 text-center mx-auto -mt-9">Save time and get more done</h1>
+      <h1 className="font-semibold text-4xl max-w-80 text-center mx-auto -mt-9">
+        Save time and get more done
+      </h1>
       <p className="max-w-80 text-center mx-auto">
         Super charge productivity. Streamline work by doing it, and seeing it,
         in one place.
       </p>
-      <div className="max-w-[80rem] mx-auto h-screen  my-14  sm:p-6 md:p-8 flex items-center justify-center">
-        <div className="w-full max-w-screen h-full sm:h-[calc(100vh-4rem)] bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col lg:flex-row">
+      <div className="max-w-[80rem] mx-auto pt-8">
+        <div className="w-full h-full sm:h-[calc(100vh-4rem)] bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col lg:flex-row">
           {/* Left side: Tab buttons */}
           <div className="w-full lg:w-1/3 p-4 sm:p-6 bg-gradient-to-b from-blue-500 to-indigo-600 overflow-y-auto">
             {tabData.map((tab) => (

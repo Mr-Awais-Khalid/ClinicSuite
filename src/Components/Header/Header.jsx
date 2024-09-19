@@ -482,7 +482,7 @@ function Header() {
                     </SignedOut>
                     <SignedIn>
                       <Link
-                        to="/home"
+                        to="/subscription"
                         className={`flex items-center gap-x-2 mr-4 font-medium ${
                           currentPath === "/eyeClinic" || currentPath === "/dentalClinic"
                             ? isScrolled
@@ -492,7 +492,7 @@ function Header() {
                         } `}
                       >
                         <i className="fa-duotone fa-house"></i>
-                        Dashboard
+                        Subscription
                       </Link>
                       <UserButton></UserButton>
                     </SignedIn>

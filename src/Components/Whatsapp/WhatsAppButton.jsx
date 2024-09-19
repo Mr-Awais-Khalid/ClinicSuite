@@ -1,4 +1,3 @@
-// src/components/WhatsAppButton.js
 import React, { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { gsap } from 'gsap';
@@ -13,8 +12,9 @@ const WhatsAppButton = () => {
 
   useEffect(() => {
     if (showButton && buttonRef.current) {
-      gsap.fromTo(
-        buttonRef.current,
+      const button = buttonRef.current;
+      const animation = gsap.fromTo(
+        button,
         { opacity: 1, scale: 1 },
         {
           opacity: 0.7,
@@ -24,12 +24,17 @@ const WhatsAppButton = () => {
           duration: 1.5,
           ease: 'power1.inOut',
           onUpdate: () => {
-            const scaleValue = gsap.getProperty(buttonRef.current, 'scale');
+            const scaleValue = gsap.getProperty(button, 'scale');
             const boxShadowIntensity = Math.abs(Math.sin(scaleValue * Math.PI)) * 15; // Calculate the shadow intensity
-            buttonRef.current.style.boxShadow = `0 0 ${boxShadowIntensity}px #25D366`;
+            button.style.boxShadow = `0 0 ${boxShadowIntensity}px #25D366`;
           }
         }
       );
+
+      // Cleanup animation on component unmount
+      return () => {
+        animation.kill();
+      };
     }
   }, [showButton]);
 
