@@ -16,6 +16,7 @@ import UserSignUp from "./Components/Auth/UserSignUp";
 import DentalDashboard from "./Components/Dashboards/DentalDashboard";
 import WhatsAppButton from "./Components/Whatsapp/WhatsAppButton";
 import Subscription from "./Pages/Subscription";
+import AddSubscription from "./Components/Client/Subscription/AddSubscription";
 
 function App() {
   
@@ -49,7 +50,8 @@ function App() {
         <Route path="/DemoRequest" element={<DemoForm />} /> 
         <Route path="/subscription" element={<Subscription/>} />
         <Route path="*" element={<ErrorPage />} />
-
+        {/* Client Routing */}
+        <Route path="/addSubscription" element={<AddSubscription/>}/>
         {/* USER Login Routes */}
         <Route path="/login" element={<UserLogin />} />
         <Route path="/register" element={<UserSignUp />} />   
@@ -57,7 +59,7 @@ function App() {
 
 
       {/* //Demo Modal Pop up */}
-      {showModal && location.pathname !== "/login" && location.pathname !== "/register" && (
+      {showModal && location.pathname === "/" && (
         <div className="fixed inset-0 z-[9999] flex items-center justify-center">
           <div className="absolute inset-0 bg-black opacity-50 transition-opacity duration-300 ease-in-out"></div>
           <div

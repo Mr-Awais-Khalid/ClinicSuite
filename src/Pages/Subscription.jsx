@@ -1,5 +1,6 @@
 import React from 'react'
 import image from '../Assets/Pics/5.png'
+import { Link } from 'react-router-dom'
 const Subscription = () => {
   return (
     <div className='pt-48 flex flex-col justify-center items-center'>
@@ -9,9 +10,9 @@ const Subscription = () => {
       <p className='p-7 text-gray-400 max-w-xl text-center'>
         There are no Subscriptions added yet kickstart your business by adding a your frist subscription.
       </p>
-      <button className='py-3 px-3 bg-sky-500 text-white font-semibold rounded'>
+      <Link to='/addSubscription' className='py-3 px-3 bg-sky-500 text-white font-semibold rounded'>
         Add Subscription
-      </button>
+      </Link>
       <div>
         <img src={image} alt='' width={500} height={500}/>
       </div>
