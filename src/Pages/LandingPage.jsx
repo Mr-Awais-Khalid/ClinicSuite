@@ -74,7 +74,7 @@ const LandingPage = () => {
       </div>
       {/* =======================================================================Hero Section */}
       <section className="bg-gradient-to-r from-blue-100 to-pink-100 z-0 mx-w-[90rem] mx-auto  transition-all ease-in-out duration-500 min-h-screen xl:min-h-[650px] px-4 md:px-8 py-8 lg:pt-36 overflow-hidden align-middle">
-        <div className="max-w-screen-2xl mx-auto relative ">
+        <div className="max-w-screen-2xl mx-auto relative mt-[113px] lg:mt-0 ">
           {/* Images for large screens */}
           <div className="hidden lg:block">
             {/* Left side images */}

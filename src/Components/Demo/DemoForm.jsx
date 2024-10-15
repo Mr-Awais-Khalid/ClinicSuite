@@ -3,7 +3,7 @@ import { Facebook, Twitter, Linkedin, Phone } from "lucide-react"; // Import the
 
 const DemoForm = () => {
   return (
-    <div className="bg-slate-50 rounded   "> 
+    <div className="bg-slate-50 rounded  hidden lg:flex"> 
       <section className="overflow-auto  z-[9999] h-3/4 ">
         <div className="container px-4 mx-auto">
           <div className="flex flex-wrap ">

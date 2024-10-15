@@ -58,10 +58,11 @@ function App() {
       </Routes>
 
 
-      {/* //Demo Modal Pop up */}
-      {showModal && location.pathname === "/" && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center">
-          <div className="absolute inset-0 bg-black opacity-50 transition-opacity duration-300 ease-in-out"></div>
+{/* // Demo Modal Pop up */}
+
+{showModal && location.pathname === "/" &&(
+        <div className="fixed inset-0 z-[9999] lg:flex items-center justify-center hidden">
+          <div className="absolute inset-0 bg-black opacity-50 transition-opacity duration-300 ease-in-out" onClick={closeModal}></div>
           <div
             className={`relative bg-white rounded-lg shadow-xl transition-all duration-300 ease-in-out ${
               showModal ? "scale-100 opacity-100" : "scale-95 opacity-0"
@@ -69,7 +70,7 @@ function App() {
           >
             <button
               onClick={closeModal}
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+              className="absolute cursor-pointer top-4 right-1 text-gray-500 hover:text-gray-700 z-[99999]"
             >
               <svg
                 className="w-6 h-6"
@@ -86,10 +87,12 @@ function App() {
                 ></path>
               </svg>
             </button>
-            <DemoForm />
+            <DemoForm/>
           </div>
         </div>
       )}
+
+
 
 
 

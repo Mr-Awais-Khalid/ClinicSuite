@@ -107,7 +107,7 @@ function Header() {
                   <i className="fa-brands fa-square-x-twitter"></i>
                 </div>
                 {/* End Col */}
-                <div className="flex items-center">
+                <div className="hidden md:flex items-center">
                   <a
                     className={`py-2 px-3 inline-flex justify-center items-center gap-2 rounded-lg font-medium hover:bg-white/10 focus:outline-none focus:bg-white/10 transition text-sm ${
                       currentPath === "/services" ||
@@ -505,8 +505,8 @@ function Header() {
       </div>
 
       {showModal && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center">
-          <div className="absolute inset-0 bg-black opacity-50 transition-opacity duration-300 ease-in-out"></div>
+        <div className="fixed inset-0 z-[9999] lg:flex  hidden items-center justify-center">
+          <div className="absolute inset-0 bg-black opacity-50 transition-opacity duration-300 ease-in-out" onClick={closeModal}></div>
           <div
             className={`relative bg-white rounded-lg shadow-xl transition-all duration-300 ease-in-out ${
               showModal ? "scale-100 opacity-100" : "scale-95 opacity-0"
@@ -514,7 +514,7 @@ function Header() {
           >
             <button
               onClick={closeModal}
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 z-[99999] cursor-pointer"
             >
               <svg
                 className="w-6 h-6"
